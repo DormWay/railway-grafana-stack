@@ -7,8 +7,14 @@ scrape_configs:
       - targets: ['localhost:9090']
       
   - job_name: 'temporal-worker'
+    scheme: http
     static_configs:
       - targets: ['dormway-engine.railway.internal:9464']
+      
+  - job_name: 'temporal-worker-alt'
+    scheme: http
+    static_configs:
+      - targets: ['dormway-engine:9464']
 
   # - job_name: 'example_api'
   #   scheme: http
